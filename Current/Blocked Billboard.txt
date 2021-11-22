@@ -9,14 +9,6 @@ struct rect{
     coord ur;
 };
 int board[2001][2001];
-void printboard(){
-    for (int i = 0; i <= 11; i++){
-        for (int j = 0; j < 9; j++){
-            cout << board[i][j] << " ";
-        }
-        cout << "\n";
-    }
-}
 int main() {
     int ans = 0;
     rect b1;
@@ -41,38 +33,29 @@ int main() {
     //one is seeable
 
 
-    for (int i = b1.ll.y; i <= b1.ur.y; i++){
-        for (int j = b1.ll.x; j <= b1.ur.x; j++){
+    for (int i = b1.ur.y; i > b1.ll.y; i--){
+        for (int j = b1.ll.x; j < b1.ur.x; j++){
             board[i][j] = 1;
         }
     }
-    cout << "\n";
-    printboard();
-    cout << "\n";
-    for (int i = b2.ll.y; i <= b2.ur.y; i++){
-        for (int j = b2.ll.x; j <= b2.ur.x; j++){
+    for (int i = b2.ur.y; i > b2.ll.y; i--){
+        for (int j = b2.ll.x; j < b2.ur.x; j++){
             board[i][j] = 1;
         }
     }
-    cout << "\n";
-    printboard();
-    cout << "\n";
-    for (int i = t1.ll.y; i <= t1.ur.y; i++){
-        for (int j = t1.ll.x; j <= t1.ur.x; j++){
+    for (int i = t1.ur.y; i > t1.ll.y; i--){
+        for (int j = t1.ll.x; j < t1.ur.x; j++){
             board[i][j] = 0;
         }
     }
-    cout << "\n";
-    printboard();
-    cout << "\n";
     for (int i = 0; i < 2001; i++){
         for (int j = 0; j < 2001; j++){
             if (board[i][j] == 1){
+                board[i][j] = 0;
                 ans++;
             }
         }
     }
     cout << ans;
-
-
+    return 0;
 } 

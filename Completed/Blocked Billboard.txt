@@ -9,6 +9,9 @@ struct rect{
     coord ur;
 };
 int board[2001][2001];
+void printboard(){
+
+}
 int main() {
     int ans = 0;
     rect b1;
@@ -38,16 +41,28 @@ int main() {
             board[i][j] = 1;
         }
     }
+    cout << "\n";
+    printboard();
+    cout << "\n";
     for (int i = b2.ur.y; i > b2.ll.y; i--){
         for (int j = b2.ll.x; j < b2.ur.x; j++){
             board[i][j] = 1;
         }
     }
+    cout << "\n";
+    printboard();
+    cout << "\n";
     for (int i = t1.ur.y; i > t1.ll.y; i--){
         for (int j = t1.ll.x; j < t1.ur.x; j++){
             board[i][j] = 0;
         }
     }
+    cout << "\n";
+    printboard();
+    cout << "\n";
+
+
+
     for (int i = 0; i < 2001; i++){
         for (int j = 0; j < 2001; j++){
             if (board[i][j] == 1){
@@ -57,5 +72,6 @@ int main() {
         }
     }
     cout << ans;
-    return 0;
+
+
 } 
