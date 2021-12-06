@@ -1,16 +1,23 @@
 #include <iostream>
 #include <algorithm>
-#include <map>
 #include <vector>
+#include <map>
 #include <stdio.h>
 using namespace std;
 int endpoint, length;
 vector<int> ans;
-vector<int> input;
+map<int, int> input;
 void recurssion(int current, int speed, int step){
+    cout << speed << "\n";
+    if (speed == 5){
+        cout << "poogers";
+    }
     if (current >= endpoint){
         if (current == endpoint){
-            
+            if ()
+            else{
+                return;
+            }
         }
         return;
     }
@@ -34,10 +41,12 @@ int main() {
     }
     for (int i = 0; i < length; i++){
         cin >> temp;
-        input.push_back(temp);
+        input[temp] = i + 1;
     }
+    cout << input[5];
+    // return 0;
     recurssion(0, 0, 0);
-    // cout << "\n\n\n";
+    cout << "\n\n\n";
     for (int i = 0; i < length; i++){
         cout << ans[i] << "\n";
     }
